@@ -1,27 +1,36 @@
-// Create email and Facebook links
-// const emailLink = document.createElement("a");
-// emailLink.href = "mailto:author@example.com";
-// emailLink.textContent = "Email";
-// document.querySelector(".contact-links").appendChild(emailLink);
+const express = require('express');
+const stripe = require('stripe')('YOUR_STRIPE_SECRET_KEY');
+const bodyParser = require('body-parser');
 
-// const facebookLink = document.createElement("a");
-// facebookLink.href = "https://www.facebook.com/authorprofile";
-// facebookLink.textContent = "Facebook";
-// document.querySelector(".contact-links").appendChild(facebookLink);
+const app = express();
+const port = 3000;
 
-//Create raindrops using JavaScript and add them to the body
-//function createRaindrops() {
-  //const numberOfRaindrops = 100;
-  //const body = document.querySelector("body");
+app.use(bodyParser.json());
 
-  //for (let i = 0; i < numberOfRaindrops; i++) {
-    //const raindrop = document.createElement("div");
-    //raindrop.className = "raindrop";
-    //raindrop.style.left = Math.random() * 100 + "vw";
-    //raindrop.style.animationDuration = Math.random() * 2 + 1 + "s";
-    //body.appendChild(raindrop);
-  //}
-//}
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
 
-// Call the function to create raindrops
-//createRaindrops();
+app.post('/charge', async (req, res) => {
+    try {
+        const { amount, currency, source } = req.body;
+
+        const paymentIntent = await stripe.paymentIntents.create({
+            amount,
+            currency,
+            payment_method: source,
+            confirmation_method: 'manual',
+            confirm: true,
+        });
+
+        return res.json({ clientSecret: paymentIntent.client_secret });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send('Server Error');
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+  
+ 
