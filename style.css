@@ -74,6 +74,20 @@ section h2 {
   border-radius: 4px;
 }
 
+/* Add these styles to your CSS file */
+button {
+  background-color: rgb(163, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(255, 0, 0);
+}
+
 .book-section h2 a {
   color: rgb(163, 0, 0);
   text-decoration: none;
