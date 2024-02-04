@@ -1,69 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T.K. Myur's Books</title>
-
-    <!-- Stylesheets -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Handjet&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
-      rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- Scripts -->
-    <script src="script.js" defer></script>
-  </head>
-
-  <body>
+<body>
     <header>
-      <h1>Welcome to T.K. Myur's Books</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+        <h1>Welcome to T.K. Myur's Books</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-      <section id="home">
-        <h1>Explore T.K. Myur's books</h1>
-        <!-- Book 1 (Penalty Company #1) -->
-        <section class="book-section">
-          <h2>
-            <a
-              target="_blank"
-              href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-1/">Penalty
-              Company #1</a>
-          </h2>
-          <div class="book-content">
-            <img src="./assets/penaltyCompany1.png" alt="Penalty Company #1" />
-            <div class="book-description">
-              <p>
-                Michael Korvin was born to be an assassin. It's all he's ever
-                known, but is it all he really is? Witness the beginning of the
-                rise...
-              </p>
-            </div>
-          </div>
-        </section>
-        <!-- Book 2 (Penalty Company #2) -->
+        <section id="home">
+            <h1>Explore T.K. Myur's books</h1>
+            <!-- Book Sections -->
+            <section class="book-section">
+                <!-- Book 1 (Penalty Company #1) -->
+                <h2>
+                    <a target="_blank"
+                        href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-1/">Penalty
+                        Company #1</a>
+                </h2>
+                <div class="book-content">
+                    <img src="./assets/penaltyCompany1.png" alt="Penalty Company #1" />
+                    <div class="book-description">
+                        <p>Michael Korvin was born to be an assassin. It's all he's ever
+                            known, but is it all he really is? Witness the beginning of the
+                            rise...
+                        </p>
+                    </div>
+                </div>
+                <!-- Book 2 (Penalty Company #2) -->
         <section class="book-section">
           <h2>
             <a
@@ -275,7 +252,48 @@
                                       </p>
                                     </section>
                                   </main>
-                                  <footer>© 2023 JMC Publishing. All rights
-                                    reserved.</footer>
-                                </body>
-                              </html>
+            </section>
+            <!-- Repeat for other books -->
+
+            <!-- Review Section -->
+            <section id="reviews">
+                <h2>Leave a Review</h2>
+                <form id="reviewForm">
+                    <label for="reviewerName">Your Name:</label>
+                    <input type="text" id="reviewerName" required>
+
+                    <label for="reviewContent">Your Review:</label>
+                    <textarea id="reviewContent" rows="4" required></textarea>
+
+                    <button type="button" onclick="submitReview()">Submit Review</button>
+                </form>
+            </section>
+
+            <!-- Contact Author Section -->
+            <section id="contact">
+                <h2>Contact the Author</h2>
+                <form id="contactForm">
+                    <label for="senderName">Your Name:</label>
+                    <input type="text" id="senderName" required>
+
+                    <label for="messageContent">Your Message:</label>
+                    <textarea id="messageContent" rows="4" required></textarea>
+
+                    <button type="button" onclick="submitContact()">Contact Author</button>
+                </form>
+            </section>
+
+            <!-- Payment Section (Placeholder) -->
+            <section id="payment">
+                <h2>Payment</h2>
+                <p>Use a secure payment gateway for real transactions.</p>
+            </section>
+        </section>
+    </main>
+
+    <footer>© 2023 JMC Publishing. All rights reserved.</footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</htm/>
