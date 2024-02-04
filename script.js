@@ -1,36 +1,17 @@
-const express = require('express');
-const stripe = require('stripe')('YOUR_STRIPE_SECRET_KEY');
-const bodyParser = require('body-parser');
+// Example JavaScript for handling reviews and contact form submissions
 
-const app = express();
-const port = 3000;
+function submitReview() {
+  const reviewerName = document.getElementById('reviewerName').value;
+  const reviewContent = document.getElementById('reviewContent').value;
 
-app.use(bodyParser.json());
+  // Process the review (you might want to send it to a server or store in a database)
+  console.log(`Review submitted by ${reviewerName}: ${reviewContent}`);
+}
 
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
+function submitContact() {
+  const senderName = document.getElementById('senderName').value;
+  const messageContent = document.getElementById('messageContent').value;
 
-app.post('/charge', async (req, res) => {
-    try {
-        const { amount, currency, source } = req.body;
-
-        const paymentIntent = await stripe.paymentIntents.create({
-            amount,
-            currency,
-            payment_method: source,
-            confirmation_method: 'manual',
-            confirm: true,
-        });
-
-        return res.json({ clientSecret: paymentIntent.client_secret });
-    } catch (error) {
-        console.error(error);
-        return res.status(500).send('Server Error');
-    }
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
-  
- 
+  // Process the contact form (you might want to send it to the author or store in a database)
+  console.log(`Message from ${senderName}: ${messageContent}`);
+}
