@@ -1,34 +1,33 @@
 const express = require('express');
-const stripe = require('stripe')('inib-sbjj-mrnp-djdh-pqdz');
-const bodyParser = require('body-parser');
-
 const app = express();
-const port = 3000;
+const stripe = require('stripe')('inib-sbjj-mrnp-djdh-pqdz');
 
-app.use(bodyParser.json());
-
-// Serve static files from the 'public' directory
 app.use(express.static('public'));
+app.use(express.json());
 
-app.post('/charge', async (req, res) => {
-    try {
-        const { amount, currency, source } = req.body;
+app.post('/purchase', async (req, res) => {
+    const { bookTitle } = req.body;
 
-        const paymentIntent = await stripe.paymentIntents.create({
-            amount,
-            currency,
-            payment_method: source,
-            confirmation_method: 'manual',
-            confirm: true,
-        });
+    const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: [{
+            price_data: {
+                currency: 'usd',
+                product_data: {
+                    name: bookTitle,
+                },
+                unit_amount: 2000, // Replace with the actual price in cents
+            },
+            quantity: 1,
+        }],
+        mode: 'payment',
+        success_url: 'https://jmc-publishing.vercel.app//success', // Redirect URL after successful payment
+        cancel_url: 'https://jmc-publishing.vercel.app//cancel', // Redirect URL after canceled payment
+    });
 
-        return res.json({ clientSecret: paymentIntent.client_secret });
-    } catch (error) {
-        console.error(error);
-        return res.status(500).send('Server Error');
-    }
+    res.json({ id: session.id });
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
 });
