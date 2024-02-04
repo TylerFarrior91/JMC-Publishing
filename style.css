@@ -82,6 +82,7 @@ button {
   font-size: 16px;
   border: none;
   cursor: pointer;
+  position: absolute;
 }
 
 button:hover {
