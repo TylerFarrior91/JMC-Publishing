@@ -1,299 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T.K. Myur's Books</title>
     <link rel="stylesheet" href="style.css" />
-</head>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="script.js" defer></script>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Welcome to T.K. Myur's Books</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <h1>Welcome to T.K. Myur's Books</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h1>Explore T.K. Myur's books</h1>
-            <!-- Book Sections -->
-            <section class="book-section">
-                <!-- Book 1 (Penalty Company #1) -->
+      <section id="home">
+        <h1>Explore T.K. Myur's books</h1>
+        <!-- Book Sections -->
+        <section class="book-section">
+          <!-- Book 1 (Penalty Company #1) -->
+          <h2>
+            <a target="_blank"
+              href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-1/">Penalty
+              Company #1</a>
+          </h2>
+          <div class="book-content">
+            <img src="./assets/penaltyCompany1.png" alt="Penalty Company #1" />
+            <div class="book-description">
+              <p>Michael Korvin was born to be an assassin. It's all he's ever
+                known, but is it all he really is? Witness the beginning of the
+                rise...
+              </p>
+            </div>
+          </div>
+          <!-- Book 2 (Penalty Company #2) -->
+          <section class="book-section">
+            <h2>
+              <a
+                target="_blank"
+                href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-2/">Penalty
+                Company #2</a>
+            </h2>
+            <div class="book-content">
+              <img src="./assets/penaltyCompany2.png" alt="Penalty Company #2" />
+              <div class="book-description">
+                <p>
+                  The war for Daax begins, and a mysterious new enemy emerges
+                  from
+                  the shadows. Can Michael find the courage to stand against
+                  true
+                  evil and learn the truth about his past?
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- Book 3 (Penalty Company #3) -->
+          <section class="book-section">
+            <h2>
+              <a
+                target="_blank"
+                href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-3/">Penalty
+                Company #3</a>
+            </h2>
+            <div class="book-content">
+              <img src="./assets/penaltyCompany3.png" alt="Penalty Company #3" />
+              <div class="book-description">
+                <p>
+                  The exciting conclusion to the War of Daax. Will Waarp finally
+                  get his reckoning? Can anyone stop ECHO? The saga continues in
+                  explosive fashion! One more battle...One more ride.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- Book 4 (Penalty Company #4) -->
+          <section class="book-section">
+            <h2>
+              <a
+                target="_blank"
+                href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-4/">Penalty
+                Company #4</a>
+            </h2>
+            <div class="book-content">
+              <img src="./assets/penaltyCompany4.png" alt="Penalty Company #4" />
+              <div class="book-description">
+                <p>
+                  A meeting of the New and Old World orders at the center of the
+                  world. New Revelations abound as Michael and Waarp come face
+                  to
+                  face with their destinies.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- Book 5 (Penalty Company #5) -->
+          <section class="book-section">
+            <h2>
+              <a
+                target="_blank"
+                href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-5/">Penalty
+                Company #5</a>
+            </h2>
+            <div class="book-content">
+              <img src="./assets/penaltyCompany5.png" alt="Penalty Company #5" />
+              <div class="book-description">
+                <p>
+                  A declaration of war was made by Shuga and it's allies. Now
+                  the
+                  kingdoms band together and the new generation steps forward to
+                  confront the storm of violence. For Vengeance. For Honor. For
+                  real.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- Book 6 (Penalty Company #6) -->
+          <section class="book-section">
+            <h2>
+              <a
+                target="_blank"
+                href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-6/">Penalty
+                Company #6</a>
+            </h2>
+            <div class="book-content">
+              <img src="./assets/penaltyCompany6.png" alt="Penalty Company #6" />
+              <div class="book-description">
+                <p>
+                  The companies set off to liberate their respective realms from
+                  Shuga and it's allies, as they confront the present threat the
+                  true darkness looms in the shadows of the past.
+                </p>
+              </section>
+              <!-- Book 7 (Penalty Company #7) -->
+              <section class="book-section">
                 <h2>
-                    <a target="_blank"
-                        href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-1/">Penalty
-                        Company #1</a>
+                  <a
+                    target="_blank"
+                    href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-7/">Penalty
+                    Company #7</a>
                 </h2>
                 <div class="book-content">
-                    <img src="./assets/penaltyCompany1.png" alt="Penalty Company #1" />
-                    <div class="book-description">
-                        <p>Michael Korvin was born to be an assassin. It's all he's ever
-                            known, but is it all he really is? Witness the beginning of the
-                            rise...
-                        </p>
-                    </div>
-                </div>
-                <!-- Book 2 (Penalty Company #2) -->
-        <section class="book-section">
-          <h2>
-            <a
-              target="_blank"
-              href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-2/">Penalty
-              Company #2</a>
-          </h2>
-          <div class="book-content">
-            <img src="./assets/penaltyCompany2.png" alt="Penalty Company #2" />
-            <div class="book-description">
-              <p>
-                The war for Daax begins, and a mysterious new enemy emerges from
-                the shadows. Can Michael find the courage to stand against true
-                evil and learn the truth about his past?
-              </p>
-            </div>
-          </div>
-        </section>
-        <!-- Book 3 (Penalty Company #3) -->
-        <section class="book-section">
-          <h2>
-            <a
-              target="_blank"
-              href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-3/">Penalty
-              Company #3</a>
-          </h2>
-          <div class="book-content">
-            <img src="./assets/penaltyCompany3.png" alt="Penalty Company #3" />
-            <div class="book-description">
-              <p>
-                The exciting conclusion to the War of Daax. Will Waarp finally
-                get his reckoning? Can anyone stop ECHO? The saga continues in
-                explosive fashion! One more battle...One more ride.
-              </p>
-            </div>
-          </div>
-        </section>
-        <!-- Book 4 (Penalty Company #4) -->
-        <section class="book-section">
-          <h2>
-            <a
-              target="_blank"
-              href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-4/">Penalty
-              Company #4</a>
-          </h2>
-          <div class="book-content">
-            <img src="./assets/penaltyCompany4.png" alt="Penalty Company #4" />
-            <div class="book-description">
-              <p>
-                A meeting of the New and Old World orders at the center of the
-                world. New Revelations abound as Michael and Waarp come face to
-                face with their destinies.
-              </p>
-            </div>
-          </div>
-        </section>
-        <!-- Book 5 (Penalty Company #5) -->
-        <section class="book-section">
-          <h2>
-            <a
-              target="_blank"
-              href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-5/">Penalty
-              Company #5</a>
-          </h2>
-          <div class="book-content">
-            <img src="./assets/penaltyCompany5.png" alt="Penalty Company #5" />
-            <div class="book-description">
-              <p>
-                A declaration of war was made by Shuga and it's allies. Now the
-                kingdoms band together and the new generation steps forward to
-                confront the storm of violence. For Vengeance. For Honor. For
-                real.
-              </p>
-            </div>
-          </div>
-        </section>
-        <!-- Book 6 (Penalty Company #6) -->
-        <section class="book-section">
-          <h2>
-            <a
-              target="_blank"
-              href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-6/">Penalty
-              Company #6</a>
-          </h2>
-          <div class="book-content">
-            <img src="./assets/penaltyCompany6.png" alt="Penalty Company #6" />
-            <div class="book-description">
-              <p>
-                The companies set off to liberate their respective realms from
-                Shuga and it's allies, as they confront the present threat the
-                true darkness looms in the shadows of the past.
-              </p>
-            </section>
-            <!-- Book 7 (Penalty Company #7) -->
-            <section class="book-section">
-              <h2>
-                <a
-                  target="_blank"
-                  href="https://www.bookrix.com/_ebook-t-k-myur-penalty-company-7/">Penalty
-                  Company #7</a>
-              </h2>
-              <div class="book-content">
-                <img src="./assets/penaltyCompany7.png" alt="Penalty Company #6" />
-                <div class="book-description">
-                  <p>
-                    War has been waged on the forces of Shuga and it's allies.
-                    The companies move to complete their mission and take them
-                    down once and for all. Michael and Waarp lead the other
-                    companies forward in this latest chapter.
-                  </p>
-                </section>
-                <!-- Book 8 (Para Wars #1) -->
-                <section class="book-section">
-                  <h2>
-                    <a
-                      target="_blank"
-                      href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-1-1/">Para
-                      Wars #1</a>
-                  </h2>
-                  <div class="book-content">
-                    <img src="./assets/Para Wars 1.png" alt="Para wars #1" />
-                    <div class="book-description">
-                      <p>
-                        Siblings Allison and Jonathin and their closest friends
-                        are thrust into a world they've never known...and a war
-                        they never asked for. Watch the start of their
-                        transformation from students to soldiers.... </p>
-                    </section>
-                    <!-- Book 9 (Para Wars #2) -->
-                    <section class="book-section">
-                      <h2>
-                        <a
-                          target="_blank"
-                          href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-2/">Para
-                          Wars #2
-                        </a>
-                      </h2>
-                      <div class="book-content">
-                        <img src="./assets/Para Wars 2.png"
-                          alt="Para Wars #2" />
-                        <div class="book-description">
-                          <p>
-                            The next Chapter in the fantasy epic. Jon, Alli, and
-                            Kayla must push forward with their allies new and
-                            old against the growing threat of Taarn.
-                          </p>
-                        </section>
-                        <!-- Book 10 (Para Wars #3) -->
-                        <section class="book-section">
-                          <h2>
-                            <a
-                              target="_blank"
-                              href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-3/">Para
-                              Wars #3
-                            </a>
-                          </h2>
-                          <div class="book-content">
-                            <img src="./assets/Para Wars 3.png"
-                              alt="Para Wars #3" />
-                            <div class="book-description">
-                              <p>
-                                The battle for Elteria begins and the new king
-                                is crowned. Can the knights of Elteria take
-                                their homes back? Constantine watches from aove
-                                as the war begins at his feet...
-                              </p>
-                            </section>
-                            <!-- Book 11 (Para Wars #4) -->
-                            <section class="book-section">
-                              <h2>
-                                <a
-                                  target="_blank"
-                                  href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-4/">Para
-                                  Wars #4
-                                </a>
-                              </h2>
-                              <div class="book-content">
-                                <img src="./assets/Para Wars 4.png"
-                                  alt="Para Wars #4" />
-                                <div class="book-description">
-                                  <p>
-                                    The Knights of Elteria return to confront
-                                    the House of Taarn to free their home
-                                    dimension. Constantine watches from the
-                                    background as the new king leads his allies
-                                    towards the final conflict.
-                                  </p>
+                  <img src="./assets/penaltyCompany7.png"
+                    alt="Penalty Company #6" />
+                  <div class="book-description">
+                    <p>
+                      War has been waged on the forces of Shuga and it's allies.
+                      The companies move to complete their mission and take them
+                      down once and for all. Michael and Waarp lead the other
+                      companies forward in this latest chapter.
+                    </p>
+                  </section>
+                  <!-- Book 8 (Para Wars #1) -->
+                  <section class="book-section">
+                    <h2>
+                      <a
+                        target="_blank"
+                        href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-1-1/">Para
+                        Wars #1</a>
+                    </h2>
+                    <div class="book-content">
+                      <img src="./assets/Para Wars 1.png" alt="Para wars #1" />
+                      <div class="book-description">
+                        <p>
+                          Siblings Allison and Jonathin and their closest
+                          friends
+                          are thrust into a world they've never known...and a
+                          war
+                          they never asked for. Watch the start of their
+                          transformation from students to soldiers.... </p>
+                      </section>
+                      <!-- Book 9 (Para Wars #2) -->
+                      <section class="book-section">
+                        <h2>
+                          <a
+                            target="_blank"
+                            href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-2/">Para
+                            Wars #2
+                          </a>
+                        </h2>
+                        <div class="book-content">
+                          <img src="./assets/Para Wars 2.png"
+                            alt="Para Wars #2" />
+                          <div class="book-description">
+                            <p>
+                              The next Chapter in the fantasy epic. Jon, Alli,
+                              and
+                              Kayla must push forward with their allies new and
+                              old against the growing threat of Taarn.
+                            </p>
+                          </section>
+                          <!-- Book 10 (Para Wars #3) -->
+                          <section class="book-section">
+                            <h2>
+                              <a
+                                target="_blank"
+                                href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-3/">Para
+                                Wars #3
+                              </a>
+                            </h2>
+                            <div class="book-content">
+                              <img src="./assets/Para Wars 3.png"
+                                alt="Para Wars #3" />
+                              <div class="book-description">
+                                <p>
+                                  The battle for Elteria begins and the new king
+                                  is crowned. Can the knights of Elteria take
+                                  their homes back? Constantine watches from
+                                  aove
+                                  as the war begins at his feet...
+                                </p>
+                              </section>
+                              <!-- Book 11 (Para Wars #4) -->
+                              <section class="book-section">
+                                <h2>
+                                  <a
+                                    target="_blank"
+                                    href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-4/">Para
+                                    Wars #4
+                                  </a>
+                                </h2>
+                                <div class="book-content">
+                                  <img src="./assets/Para Wars 4.png"
+                                    alt="Para Wars #4" />
+                                  <div class="book-description">
+                                    <p>
+                                      The Knights of Elteria return to confront
+                                      the House of Taarn to free their home
+                                      dimension. Constantine watches from the
+                                      background as the new king leads his
+                                      allies
+                                      towards the final conflict.
+                                    </p>
+                                  </section>
+                                  <!-- Book 12 (Para Wars #5) -->
+                                  <section class="book-section">
+                                    <h2>
+                                      <a
+                                        target="_blank"
+                                        href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-5/">Para
+                                        Wars #5
+                                      </a>
+                                    </h2>
+                                    <div class="book-content">
+                                      <img src="./assets/Para  Wars 5.png"
+                                        alt="Para Wars #5" />
+                                      <div class="book-description">
+                                        <p>
+                                          The Knights of Elteria come face to
+                                          face
+                                          with the Army of Constantine for one
+                                          final showdown. Jonathin and Genko
+                                          finally confront Constantine and
+                                          Tiris.
+                                          Can the King finally overcome the
+                                          Priest
+                                          of Death?
+                                        </p>
+                                      </section>
+                                    </main>
+                                  </section>
+                                  <!-- Repeat for other books -->
+
+                                  <!-- Review Section -->
+                                  <section id="reviews">
+                                    <h2>Leave a Review</h2>
+                                    <form id="reviewForm">
+                                      <label for="reviewerName">Your Name:</label>
+                                      <input type="text" id="reviewerName"
+                                        required>
+
+                                      <label for="reviewContent">Your Review:</label>
+                                      <textarea id="reviewContent" rows="4"
+                                        required></textarea>
+
+                                      <button type="button"
+                                        onclick="submitReview()">Submit Review</button>
+                                    </form>
+                                  </section>
+
+                                  <!-- Contact Author Section -->
+                                  <section id="contact" class="book-section">  
+                                    <h2>Contact the Author</h2>
+                                    <form id="contactForm">
+                                      <label for="senderName">Your Name:</label>
+                                      <input type="text" id="senderName"
+                                        required>
+
+                                      <label for="messageContent">Your Message:</label>
+                                      <textarea id="messageContent" rows="4"
+                                        required></textarea>
+
+                                      <button type="button"
+                                        onclick="submitContact()">Contact Author</button>
+                                    </form>
+                                  </section>
+
+                                  <!-- Payment Section (Placeholder) -->
+                                  <section id="payment" class="book-section">
+                                    <h2>Payment</h2>
+                                    <p>Use a secure payment gateway for real
+                                      transactions.</p>
+                                  </section>
                                 </section>
-                                <!-- Book 12 (Para Wars #5) -->
-                                <section class="book-section">
-                                  <h2>
-                                    <a
-                                      target="_blank"
-                                      href="https://www.bookrix.com/_ebook-t-k-myur-para-wars-5/">Para
-                                      Wars #5
-                                    </a>
-                                  </h2>
-                                  <div class="book-content">
-                                    <img src="./assets/Para  Wars 5.png"
-                                      alt="Para Wars #5" />
-                                    <div class="book-description">
-                                      <p>
-                                        The Knights of Elteria come face to face
-                                        with the Army of Constantine for one
-                                        final showdown. Jonathin and Genko
-                                        finally confront Constantine and Tiris.
-                                        Can the King finally overcome the Priest
-                                        of Death?
-                                      </p>
-                                    </section>
-                                  </main>
-            </section>
-            <!-- Repeat for other books -->
+                              </main>
 
-            <!-- Review Section -->
-            <section id="reviews">
-                <h2>Leave a Review</h2>
-                <form id="reviewForm">
-                    <label for="reviewerName">Your Name:</label>
-                    <input type="text" id="reviewerName" required>
+                              <footer>© 2023 JMC Publishing. All rights
+                                reserved.</footer>
 
-                    <label for="reviewContent">Your Review:</label>
-                    <textarea id="reviewContent" rows="4" required></textarea>
+                              <script src="script.js" defer></script>
+                            </body>
 
-                    <button type="button" onclick="submitReview()">Submit Review</button>
-                </form>
-            </section>
-
-            <!-- Contact Author Section -->
-            <section id="contact">
-                <h2>Contact the Author</h2>
-                <form id="contactForm">
-                    <label for="senderName">Your Name:</label>
-                    <input type="text" id="senderName" required>
-
-                    <label for="messageContent">Your Message:</label>
-                    <textarea id="messageContent" rows="4" required></textarea>
-
-                    <button type="button" onclick="submitContact()">Contact Author</button>
-                </form>
-            </section>
-
-            <!-- Payment Section (Placeholder) -->
-            <section id="payment">
-                <h2>Payment</h2>
-                <p>Use a secure payment gateway for real transactions.</p>
-            </section>
-        </section>
-    </main>
-
-    <footer>© 2023 JMC Publishing. All rights reserved.</footer>
-
-    <script src="script.js" defer></script>
-</body>
-
-</htm/>
+                            </htm/>
