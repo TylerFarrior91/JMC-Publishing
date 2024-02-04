@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
-const stripe = require('stripe')('inib-sbjj-mrnp-djdh-pqdz');
-
+const stripe = require('stripe')('sk_test_51OgBqFJiyN6zqbS7nyAI1S7X4EELNncVRmaNuQ76yVzqJa1VloOKv9wboHKOLOoyejCA8uEzEoW0G5hb7BUmw0Ly00Zaj7zL6O');
 app.use(express.static('public'));
 app.use(express.json());
 
