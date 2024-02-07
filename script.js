@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Your Stripe publishable key
-  const stripePublishableKey = 'your_stripe_publishable_key';
+  const stripePublishableKey = ('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');
+
 
   // Initialize Stripe with your publishable key
   const stripe = Stripe(stripePublishableKey);
