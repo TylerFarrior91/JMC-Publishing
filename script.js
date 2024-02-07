@@ -1,50 +1,68 @@
-// Example JavaScript for handling reviews and contact form submissions
+document.addEventListener('DOMContentLoaded', () => {
+  // Your Stripe publishable key
+  const stripePublishableKey = 'your_stripe_publishable_key';
 
-function submitReview() {
-  const reviewerName = document.getElementById('reviewerName').value;
-  const reviewContent = document.getElementById('reviewContent').value;
+  // Initialize Stripe with your publishable key
+  const stripe = Stripe(stripePublishableKey);
 
-  // Process the review (you might want to send it to a server or store in a database)
-  console.log(`Review submitted by ${reviewerName}: ${reviewContent}`);
-}
+  // Elements to represent card details
+  const elements = stripe.elements();
+  const cardElement = elements.create('card');
 
-function submitContact() {
-  const senderName = document.getElementById('senderName').value;
-  const messageContent = document.getElementById('messageContent').value;
+  // Add card element to the DOM
+  cardElement.mount('#card-element');
 
-  // Process the contact form (you might want to send it to the author or store in a database)
-  console.log(`Message from ${senderName}: ${messageContent}`);
-}
+  // Handle form submission
+  const buyBookForm = document.getElementById('buyBookForm');
+  buyBookForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
 
-// Add this to your script.js file
-const stripe = Stripe('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');
+      // Disable the Buy Now button to prevent multiple submissions
+      const buyNowButton = document.getElementById('buyNowButton');
+      buyNowButton.disabled = true;
 
-function buyBook(bookTitle) {
-  // Replace with your server endpoint for processing payments
-  const serverEndpoint = '/purchase';
+      // Create payment method using the card element
+      const { paymentMethod, error } = await stripe.createPaymentMethod({
+          type: 'card',
+          card: cardElement,
+      });
 
-  // Fetch your server to create a payment session
-  fetch(serverEndpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      bookTitle: bookTitle,
-    }),
-  })
-    .then(response => response.json())
-    .then(session => {
-      // When the session is received, redirect the user to Stripe Checkout
-      return stripe.redirectToCheckout({ sessionId: session.id });
-    })
-    .then(result => {
-      // If `redirectToCheckout` fails due to a browser or network error, display an error to the user
-      if (result.error) {
-        alert(result.error.message);
+      if (error) {
+          // Handle error (e.g., display error message to the user)
+          alert(`Error: ${error.message}`);
+          buyNowButton.disabled = false; // Enable the button again
+      } else {
+          // On successful payment method creation, send the payment method ID to your server
+          const paymentMethodId = paymentMethod.id;
+
+          // Make a request to your server to complete the payment
+          fetch('/purchase', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                  bookTitle: 'Your Book Title',  // Replace with the actual book title
+                  paymentMethod: paymentMethodId,
+              }),
+          })
+          .then(response => response.json())
+          .then(data => {
+              // Handle the server response
+              if (data.success) {
+                  alert(`Thank you for purchasing ${data.paymentIntent.description}!`);
+              } else {
+                  alert(`Error: ${data.error}`);
+              }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              alert('An error occurred. Please try again.');
+          })
+          .finally(() => {
+              // Enable the Buy Now button after processing
+              buyNowButton.disabled = false;
+          });
       }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-}
+  });
+});
