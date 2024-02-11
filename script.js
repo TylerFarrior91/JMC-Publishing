@@ -1,3 +1,8 @@
+// Function to handle the buyBook action with an argument
+function buyBook(bookTitle) {
+  // Add your logic for purchasing the book here
+  console.log(`Book purchased: ${bookTitle}`);
+}
 document.addEventListener('DOMContentLoaded', () => {
   // Your Stripe publishable key
   const stripePublishableKey = ('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');
