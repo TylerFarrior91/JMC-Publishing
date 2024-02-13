@@ -5,7 +5,7 @@ function buyBook(bookTitle) {
 }
 document.addEventListener('DOMContentLoaded', () => {
   // Your Stripe publishable key
-  const stripePublishableKey = ('pk_live_51OgBqFJiyN6zqbS76edhxo9FmQ7pm4TmAninCFjjDrrlTgMYSmEypVZDSxiNiatBHZoJJGoOgQ6uDZKbWlzokiDf00YOAuyajB');
+  const stripePublishableKey = ('pk_test_51OgBqFJiyN6zqbS7va3w0SQtAcpH6sZfEUJ5ITqfzSjuCxympA9TrBY4EQk9y5CnWaqHIcVWWGo1hPqbqDUtHakK00iYWxzXcz');
 
 
   // Initialize Stripe with your publishable key
