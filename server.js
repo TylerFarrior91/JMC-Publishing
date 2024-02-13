@@ -1,5 +1,5 @@
 const express = require('express');
-const stripe = require('stripe')('');
+const stripe = require('stripe')('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');
 
 const app = express();
 const PORT = 3000;

@@ -5,7 +5,7 @@ function buyBook(bookTitle) {
 }
 document.addEventListener('DOMContentLoaded', () => {
   // Your Stripe publishable key
-  const stripePublishableKey = ('');
+  const stripePublishableKey = ('pk_live_51OgBqFJiyN6zqbS76edhxo9FmQ7pm4TmAninCFjjDrrlTgMYSmEypVZDSxiNiatBHZoJJGoOgQ6uDZKbWlzokiDf00YOAuyajB');
 
 
   // Initialize Stripe with your publishable key
