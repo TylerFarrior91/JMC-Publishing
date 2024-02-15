@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Add card element to the DOM
-cardElement.mount('#card-element');
+// cardElement.mount('#card-element');
 
 // Mock book data for demonstration purposes
 const books = [
