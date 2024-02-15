@@ -1,6 +1,6 @@
 // Elements to represent card details
 // const elements = stripe.elements();
-const cardElement = elements.create('card');
+// const cardElement = elements.create('card');
 
 document.addEventListener('DOMContentLoaded', () => {
   // Your Stripe publishable key
