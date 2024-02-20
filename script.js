@@ -41,7 +41,7 @@ function buyBook(bookTitle) {
 // Function to update cart display
 function updateCartDisplay() {
   const cartItemsContainer = document.getElementById('cart-items');
-  cartItemsContainer.innerHTML = '';
+  // cartItemsContainer.innerHTML = '';
   cart.forEach(book => {
     const listItem = document.createElement('li');
     listItem.textContent = `${book.title} - $${book.price.toFixed(2)}`;
