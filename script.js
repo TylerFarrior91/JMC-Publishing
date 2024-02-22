@@ -30,23 +30,35 @@ const books = [
 let cart = [];
 
 // Function to add book to the cart
-function buyBook(bookTitle) {
+function buyBook(bookTitle, bookID) {
   const book = books.find(b => b.title === bookTitle);
   if (book) {
     cart.push(book);
-    updateCartDisplay();
+    updateCartDisplay(bookID);
   }
 }
 
 // Function to update cart display
-function updateCartDisplay() {
-  const cartItemsContainer = document.getElementById('cart-items');
-  // cartItemsContainer.innerHTML = '';
+function updateCartDisplay(bookID) {
+
+  const cartItemsContainer = document.getElementById('cart');
+
+  if (cart.length > 0) {
+      cartItemsContainer.style.display = 'block';
+  } else {
+      cartItemsContainer.style.display = 'none';
+  }
+
+  cartItemsContainer.innerHTML = `${bookID}`;
+  console.log(cart);
   cart.forEach(book => {
     const listItem = document.createElement('li');
     listItem.textContent = `${book.title} - $${book.price.toFixed(2)}`;
     cartItemsContainer.appendChild(listItem);
   });
+
+  const cartCountElement = document.getElementById('cartCount');
+  cartCountElement.textContent = cart.length;
 }
 
 // Function to simulate checkout (replace with your Stripe checkout logic)
